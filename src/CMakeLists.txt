@@ -1,5 +1,5 @@
-add_executable(printer_ip  printer_ip.cpp)
+add_executable(print_ip  print_ip.cpp)
 
-target_include_directories(printer_ip PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(print_ip PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
-install(TARGETS printer_ip RUNTIME DESTINATION bin)
+install(TARGETS print_ip RUNTIME DESTINATION bin)
