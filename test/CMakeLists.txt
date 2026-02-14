@@ -8,4 +8,4 @@ target_include_directories(print_ip_tests PRIVATE ${PROJECT_SOURCE_DIR}/include 
 
 target_link_libraries(print_ip_tests PRIVATE ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
-add_test(NAME print_ip_tests COMMAND ip_filter_tests)
+add_test(NAME print_ip_tests COMMAND print_ip_tests)
