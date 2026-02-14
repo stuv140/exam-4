@@ -71,7 +71,7 @@ inline constexpr auto if_make_types(T2... values) {
 }
 
 
-template <typename T> EnableIf<!std::is_integral<T>::value, void>::type print_ip(T container)
+template <typename T> typename EnableIf<!std::is_integral<T>::value, void>::type print_ip(T container)
 {
     if constexpr (container_category<T>::vector_ip || container_category<T>::list_ip) {
         auto num = container.size();
@@ -130,7 +130,7 @@ template <typename T> EnableIf<!std::is_integral<T>::value, void>::type print_ip
         }
     }
 }
-template <typename T> EnableIf<std::is_integral<T>::value, void>::type print_ip(T number)
+template <typename T> typename EnableIf<std::is_integral<T>::value, void>::type print_ip(T number)
 {
 
 
