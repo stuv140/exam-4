@@ -1,12 +1,9 @@
 #include <iostream>
 #include <string>
-#include<bitset>
-#include<stdint.h>
 #include<vector>
-#include<sstream>
 #include<list>
 #include<tuple>
-#include"Template.h" 
+#include"Template.h"
 
 
 
@@ -20,10 +17,13 @@ int main()
     std::string str("Hello world!");
     std::vector<int> vInt = {100,200,300,400};
     std::list<short> lInt= {400,300,200,100};
+    
+   
     auto make_tuple = if_make_types<int>(123, 456, 789, 0);
-    auto make_tuple2 = if_make_types<double>(123.3, 456.45, 789.666, 0.2);
-//    std::cout << std::bitset<32>(number) << std::endl;
-    double d = 0.0;
+    std::tuple<int, int, int, int> t1 = { 123, 456, 789, 0 };
+  // тут ошибка компиляции
+   //auto make_tuple2 = if_make_types<double>(123.3, 45645, 789.666, 0.2);
+
    print_ip(u8);
    print_ip(u16);
    print_ip(u32);
@@ -32,8 +32,8 @@ int main()
    print_ip(vInt);
    print_ip(lInt);
    print_ip(make_tuple);
-   //print_ip(number);  //надоже это тоже работает 
-   print_ip(d); // этот тип игнорируется
+  // print_ip(number);  //надоже это тоже работает 
+ 
   
     return 0;
 
