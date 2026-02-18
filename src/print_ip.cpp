@@ -3,6 +3,7 @@
 #include<vector>
 #include<list>
 #include<tuple>
+#include<stdint.h>
 #include"Template.h"
 
 
