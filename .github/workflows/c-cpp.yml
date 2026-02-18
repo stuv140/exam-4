@@ -15,7 +15,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install doxygen -y
       - name: Generate Doxyfile
         run: doxygen -g Doxyfile
-        - name: List files before Doxygen Action
+      - name: List files before Doxygen Action
         run: ls -la ${{ github.workspace }}
         
       # Build the HTML documentation
