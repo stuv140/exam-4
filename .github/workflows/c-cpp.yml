@@ -5,6 +5,8 @@ on:
     branches:
       - doc
       - feature/github_actions
+permissions: # Добавить здесь
+  contents: write
 
 jobs:
   build:
