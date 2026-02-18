@@ -108,7 +108,7 @@ template <typename T> typename EnableIf<std::is_integral<T>::value, void>::type 
 //void print_single_element(const Tuple& tup, const auto& element) {
 //
 //}
-/*
+
 template <typename... Ts>
 void print_ip(const std::tuple<Ts...>& ip) {
     
@@ -127,5 +127,5 @@ void print_ip(const std::tuple<Ts...>& ip) {
         }, ip); 
     std::cout << "\n";
 }
-*/
+
 
