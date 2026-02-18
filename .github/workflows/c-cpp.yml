@@ -11,7 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install doxygen -y
+
+      # Build the HTML documentation
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.1.0
         with:
+          doxyfile-path: ./Doxyfile
+          working-directory: .          
           submodules: true
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
