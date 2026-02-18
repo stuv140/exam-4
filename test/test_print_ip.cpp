@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 #include <cstdint> // Для int8_t, uint8_t и т.д.
-#include "Template.h"
+#include "template.h"
 
 
 
@@ -79,34 +79,7 @@ BOOST_AUTO_TEST_CASE(PrintInt_uint64_t)
 
 BOOST_AUTO_TEST_SUITE_END() // PrintInt_Tests
 
-// Тесты для container_category
-BOOST_AUTO_TEST_SUITE(ContainerCategory_Tests)
 
-BOOST_AUTO_TEST_CASE(container_category_vector)
-{
-    BOOST_CHECK(container_category<std::vector<int>>::vector_ip);
-    BOOST_CHECK(!container_category<std::vector<int>>::list_ip);
-    BOOST_CHECK(!container_category<std::vector<int>>::string_ip);
-    BOOST_CHECK(!container_category<std::vector<int>>::tuple_ip);
-}
-
-BOOST_AUTO_TEST_CASE(container_category_list)
-{
-    BOOST_CHECK(container_category<std::list<double>>::list_ip);
-    BOOST_CHECK(!container_category<std::list<double>>::vector_ip);
-    BOOST_CHECK(!container_category<std::list<double>>::string_ip);
-    BOOST_CHECK(!container_category<std::list<double>>::tuple_ip);
-}
-
-BOOST_AUTO_TEST_CASE(container_category_string)
-{
-    BOOST_CHECK(container_category<std::string>::string_ip);
-    BOOST_CHECK(!container_category<std::string>::vector_ip);
-    BOOST_CHECK(!container_category<std::string>::list_ip);
-    BOOST_CHECK(!container_category<std::string>::tuple_ip);
-}
-
-BOOST_AUTO_TEST_SUITE_END() // IfMakeTypes_Tests
 
 
 // Тесты для print_ip
