@@ -6,7 +6,9 @@
 #include<stdint.h>
 #include"Template.h"
 
-
+//<summary>
+/// Применяем полученные знания о шаблонах, реализуя перегруженные шаблонные функции с помощью механизма SFINAE. Подключаем к своей сборочной ферме утилиту doxygen.
+/// </summary>
 
 int main()
 {
@@ -23,17 +25,22 @@ int main()
     auto make_tuple = if_make_types<int>(123, 456, 789, 0);
     std::tuple<int, int, int, int> t1 = { 123, 456, 789, 0 };
   // тут ошибка компиляции
-   //auto make_tuple2 = if_make_types<double>(123.3, 45645, 789.666, 0.2);
-
-   print_ip(u8);
-   print_ip(u16);
-   print_ip(u32);
-   print_ip(u64);
-   print_ip(str);
-   print_ip(vInt);
-   print_ip(lInt);//
- //  print_ip(make_tuple);
-  // print_ip(number);  //надоже это тоже работает 
+ //auto make_tuple2 = if_make_types<double>(123.3, 45645, 789.666, 0.2);
+  //print_ip(int8_t) вывод в виде произвольного целочисленного типа
+ print_ip(u8);
+ //print_ip(int16_t) вывод в виде двух целочисленных типов разделенных точкой
+ print_ip(u16);
+// print_ip(int32_t) вывод ip адресса
+ print_ip(u32);
+ // print_ip(int64_t) вывод целых чисел разделенных точкой
+ print_ip(u64);
+ // print_ip(std::string) вывод String
+ print_ip(str);
+ // print_ip(std::vector<int>) вывод через точку чисел вектора
+ print_ip(vInt);
+ print_ip(lInt);
+ print_ip(make_tuple);
+// print_ip(number);  //надоже это тоже работает 
  
   
     return 0;
