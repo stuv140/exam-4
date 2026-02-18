@@ -21,7 +21,23 @@ jobs:
         run: doxygen -g Doxyfile
       - name: List files before Doxygen Action
         run: ls -la ${{ github.workspace }}
-        
+      - name: Configure Git
+  run: |
+    git config user.name "GitHub Actions"
+    git config user.email "actions@github.com"
+
+    - name: Commit and Push Doxyfile
+  run: |
+    git add Doxyfile
+    # Проверяем, были ли изменения, чтобы не делать пустой коммит
+    if git diff --staged --quiet; then
+      echo "No changes to Doxyfile."
+    else
+      git commit -m "chore: Add generated Doxyfile"
+      git push
+    fi
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Используется для аутентификации при пуше
       # Build the HTML documentation
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@v1.1.0
