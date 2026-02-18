@@ -4,9 +4,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "Shap Hell's Gate"
+PROJECT_NAME           = "Ip adress"
 PROJECT_NUMBER         = 1.0
-PROJECT_BRIEF          = "C# Implementation of the Hell's Gate VX Technique"
+PROJECT_BRIEF          = "C++"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = ./doc/
 CREATE_SUBDIRS         = YES
@@ -382,4 +382,5 @@ MAX_DOT_GRAPH_DEPTH    = 0
 DOT_TRANSPARENT        = NO
 DOT_MULTI_TARGETS      = YES
 GENERATE_LEGEND        = YES
+
 DOT_CLEANUP            = YES
