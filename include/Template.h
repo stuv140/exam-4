@@ -3,7 +3,7 @@
 #include<list>
 #include<tuple>
 #include <type_traits>
-
+// void PrintInt(const U number) шаблон для вывода чисел стандартного типа
 template<typename U>
 void PrintInt(const U number) {
     int i = sizeof(number);
@@ -33,7 +33,10 @@ template<typename T1, typename... T2>
    
     return std::make_tuple(std::forward<T2>(values)...); 
 }
-
+//typename EnableIf std::is_integral<T>::value проверяет значения интегрального типа
+//typename EnableIf std::is_same<T,std::string>::value проверяет значения строкового типа
+ //std::is_same<T, std::vector<typename T::value_type>>::value проверяет контейнер  векторного типа
+ //typename EnableIf std::is_same<T, std::list<typename T::value_type>>::value проверяет контейнер  типа лист
 
 template <typename T> typename EnableIf<!std::is_integral<T>::value && std::is_same<T,std::string>::value, void>::type print_ip(T str) {
     std::cout << str << std::endl;
@@ -60,7 +63,7 @@ template <typename T> typename EnableIf<std::is_integral<T>::value, void>::type 
     {
         case sizeof(int8_t) :
         {
-            uint8_t temp = number; //-1 = 255, т.к. реализуется выход за диапазон значений для этого типа
+            uint8_t temp = number; // uint8_t при передачи -1 = 255, т.к. реализуется выход за диапазон значений для этого типа
             std::cout << (int)temp << std::endl; //можно раскоментировать PrintInt результат такой же, но так на мой взгляд быстрее
           //  PrintInt(temp);
             break;
