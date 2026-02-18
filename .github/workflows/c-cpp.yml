@@ -56,7 +56,15 @@ jobs:
         with:
           doxyfile-path: ./Doxyfile
           working-directory: . # Убедитесь, что это корень, где находится Doxyfile
-
+      - name: GH Pages Deployment
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: ./doc/html/
+         enable_jekyll: false
+         allow_empty_commit: false
+         force_orphan: true
+         publish_branch: doc
       # Шаги для сборки и тестирования (кажутся корректными)
       - name: Install Boost for testing
         run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
