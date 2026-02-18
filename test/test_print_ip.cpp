@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 #include <cstdint> // Для int8_t, uint8_t и т.д.
-#include "template.h"
+#include "../include/template.h" 
 
 
 
