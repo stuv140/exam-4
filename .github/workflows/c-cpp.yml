@@ -5,54 +5,78 @@ on:
     branches:
       - doc
       - feature/github_actions
-permissions: # Добавить здесь
-  contents: write
+
+permissions:
+  contents: write # Необходимо для действий, которые записывают в репозиторий (например, create-release, upload-release-asset)
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4 # Используем более новую версию
+
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install doxygen -y
-      - name: List files in workspace
-        run: ls -la ${{ github.workspace }}
-      - name: Generate Doxyfile
-        run: doxygen -g Doxyfile
-      - name: List files before Doxygen Action
-        run: ls -la ${{ github.workspace }}
-      - name: Configure Git
-  run: |
-    git config user.name "GitHub Actions"
-    git config user.email "actions@github.com"
 
-    - name: Commit and Push Doxyfile
-  run: |
-    git add Doxyfile
-    # Проверяем, были ли изменения, чтобы не делать пустой коммит
-    if git diff --staged --quiet; then
-      echo "No changes to Doxyfile."
-    else
-      git commit -m "chore: Add generated Doxyfile"
-      git push
-    fi
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Используется для аутентификации при пуше
-      # Build the HTML documentation
+      - name: List files in workspace (for debugging)
+        # Этот шаг полезен для отладки, чтобы видеть, что находится в репозитории
+        run: ls -la ${{ github.workspace }}
+
+      # --- НАЧАЛО БЛОКА, КОТОРЫЙ МОЖНО УДАЛИТЬ, ЕСЛИ DOXYFILE УЖЕ ЕСТЬ И НАСТРОЕН ---
+      # Если Doxyfile уже есть в репозитории и настроен, эти шаги не нужны.
+      # Если вы хотите, чтобы workflow сам генерировал и коммитил Doxyfile,
+      # то нужно исправить его форматирование.
+      #
+      # - name: Generate Doxyfile
+      #   run: doxygen -g Doxyfile
+      #   # Убедитесь, что Doxyfile создается в корне, если он там ожидается
+      #   working-directory: ${{ github.workspace }}
+      #
+      # - name: Configure Git
+      #   run: |
+      #     git config user.name "GitHub Actions"
+      #     git config user.email "actions@github.com"
+      #
+      # - name: Commit and Push Doxyfile
+      #   run: |
+      #     git add Doxyfile
+      #     if ! git diff --staged --quiet; then
+      #       git commit -m "chore: Add generated Doxyfile"
+      #       git push
+      #     else
+      #       echo "No changes to Doxyfile."
+      #     fi
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # --- КОНЕЦ БЛОКА, КОТОРЫЙ МОЖНО УДАЛИТЬ ---
+
+      # Если Doxyfile уже есть в репозитории, этот шаг просто его прочитает
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
           doxyfile-path: ./Doxyfile
-          working-directory: .        
-          
-      - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
-      - run: cmake --build .
-      - run: cmake --build . --target test
-      - run: cmake --build . --target package
+          working-directory: . # Убедитесь, что это корень, где находится Doxyfile
+
+      # Шаги для сборки и тестирования (кажутся корректными)
+      - name: Install Boost for testing
+        run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+
+      - name: Configure CMake
+        run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
+
+      - name: Build project
+        run: cmake --build .
+
+      - name: Run tests
+        run: cmake --build . --target test
+
+      - name: Package project
+        run: cmake --build . --target package
+
+      # Шаги для создания релиза (рекомендуется использовать более новые версии actions)
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1 # Замените на @v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -60,13 +84,14 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
+
       - name: Upload Release Asset
         id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1 # Замените на @v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: print_ip-0.1.0-Linux.deb
+          asset_path: print_ip-0.1.0-Linux.deb # Убедитесь, что этот файл существует после 'package'
           asset_name: print_ip-0.1.0-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
