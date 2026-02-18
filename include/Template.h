@@ -35,10 +35,10 @@ template<typename T1, typename... T2>
 }
 
 
-template <typename T> EnableIf<!std::is_integral<T>::value && std::is_same<T,std::string>::value, void>::type print_ip(T str) {
+template <typename T> typename EnableIf<!std::is_integral<T>::value && std::is_same<T,std::string>::value, void>::type print_ip(T str) {
     std::cout << str << std::endl;
 }
-template <typename T> EnableIf<!std::is_integral<T>::value  && (std::is_same<T, std::vector<typename T::value_type>>::value  || std::is_same<T, std::list<typename T::value_type>>::value), void>::type print_ip(T container) {
+template <typename T> typename EnableIf<!std::is_integral<T>::value  && (std::is_same<T, std::vector<typename T::value_type>>::value  || std::is_same<T, std::list<typename T::value_type>>::value), void>::type print_ip(T container) {
     auto num = container.size();
     for (auto elem : container)
     {
@@ -51,7 +51,7 @@ template <typename T> EnableIf<!std::is_integral<T>::value  && (std::is_same<T, 
     std::cout << std::endl;
 }
 
-template <typename T> EnableIf<std::is_integral<T>::value, void>::type print_ip(T number)
+template <typename T> typename EnableIf<std::is_integral<T>::value, void>::type print_ip(T number)
 {
 
 
