@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     branches:
-      - main
+      - doc
   workflow_dispatch:
 
 jobs:
@@ -22,5 +22,5 @@ jobs:
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
           dir: docs/html
-          branch: gh-pages
+          branch: doc
           token: ${{ secrets.ACCESS_TOKEN }}
