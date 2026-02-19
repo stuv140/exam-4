@@ -1,112 +1,26 @@
-name: 'C++ CI'
+name: publish
 
 on:
   push:
     branches:
-      - doc
-      - feature/github_actions
-
-permissions:
-  contents: write # Необходимо для действий, которые записывают в репозиторий (например, create-release, upload-release-asset)
+      - main
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4 # Используем более новую версию
-
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install doxygen -y
-
-
-
-      # --- НАЧАЛО БЛОКА, КОТОРЫЙ МОЖНО УДАЛИТЬ, ЕСЛИ DOXYFILE УЖЕ ЕСТЬ И НАСТРОЕН ---
-      # Если Doxyfile уже есть в репозитории и настроен, эти шаги не нужны.
-      # Если вы хотите, чтобы workflow сам генерировал и коммитил Doxyfile,
-      # то нужно исправить его форматирование.
-      #
-      - name: Generate Doxyfile
-        run: doxygen -g Doxyfile
-      - name: Create documentation     
-        run: doxygen
-        
-      - name: List files in workspace (for debugging)
-        # Этот шаг полезен для отладки, чтобы видеть, что находится в репозитории
-        run: ls -la ${{ github.workspace }}
-
-        
-      #   # Убедитесь, что Doxyfile создается в корне, если он там ожидается
-      
-      #   working-directory: ${{ github.workspace }}
-      #
-      # - name: Configure Git
-      #   run: |
-      #     git config user.name "GitHub Actions"
-      #     git config user.email "actions@github.com"
-      #
-      # - name: Commit and Push Doxyfile
-      #   run: |
-      #     git add Doxyfile
-      #     if ! git diff --staged --quiet; then
-      #       git commit -m "chore: Add generated Doxyfile"
-      #       git push
-      #     else
-      #       echo "No changes to Doxyfile."
-      #     fi
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # --- КОНЕЦ БЛОКА, КОТОРЫЙ МОЖНО УДАЛИТЬ ---
-
-      # Если Doxyfile уже есть в репозитории, этот шаг просто его прочитает
-    #  - name: Doxygen Action
-     #   uses: mattnotmitt/doxygen-action@v1.1.0
-     #   with:
-     #     doxyfile-path: ./Doxyfile
-      #    working-directory: /github/workspace 
-     # - name: GH Pages Deployment
-      #  uses: peaceiris/actions-gh-pages@v3
-       # with:
-        # github_token: ${{ secrets.GITHUB_TOKEN }}
-        # publish_dir: ./doc/html/
-   #      enable_jekyll: false
-    #     allow_empty_commit: false
-   #      force_orphan: true
-   #      publish_branch: doc
-      # Шаги для сборки и тестирования (кажутся корректными)
-  #    - name: Install Boost for testing
-  #      run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
-
-   #   - name: Configure CMake
-    #    run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
-
- #     - name: Build project
-  #      run: cmake --build .
-
-   #   - name: Run tests
-   #     run: cmake --build . --target test
-
-  #    - name: Package project
-   #     run: cmake --build . --target package
-
-      # Шаги для создания релиза (рекомендуется использовать более новые версии actions)
-#      - name: Create Release
- #       id: create_release
-  #      uses: actions/create-release@v1 # Замените на @v1
-   #     env:
-    #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   #     with:
-    #      tag_name: ${{ github.run_number }}
-     #     release_name: Release ${{ github.run_number }}
-     #     draft: false
-      #    prerelease: false
-
-   #   - name: Upload Release Asset
-    #    id: upload-release-asset
-     #   uses: actions/upload-release-asset@v1 # Замените на @v1
-      #  env:
-     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #    with:
-     #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #    asset_path: print_ip-0.1.0-Linux.deb # Убедитесь, что этот файл существует после 'package'
-     #     asset_name: print_ip-0.1.0-Linux.deb
-     #     asset_content_type: application/vnd.debian.binary-package
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: "true"
+      - name: set version
+        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
+      - name: Generate Documentation
+        uses: mattnotmitt/doxygen-action@edge
+      - name: Publish generated content to GitHub Pages
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
+        with:
+          dir: docs/html
+          branch: gh-pages
+          token: ${{ secrets.ACCESS_TOKEN }}
