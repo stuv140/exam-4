@@ -29,7 +29,8 @@ jobs:
       #
       - name: Generate Doxyfile
         run: doxygen -g Doxyfile
-         
+      - name: Create documentation     
+        run: doxygen
       #   # Убедитесь, что Doxyfile создается в корне, если он там ожидается
       
       #   working-directory: ${{ github.workspace }}
