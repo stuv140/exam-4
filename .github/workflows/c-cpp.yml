@@ -27,8 +27,8 @@ jobs:
       # Если вы хотите, чтобы workflow сам генерировал и коммитил Doxyfile,
       # то нужно исправить его форматирование.
       #
-        - name: Generate Doxyfile
-         run: doxygen -g Doxyfile
+      - name: Generate Doxyfile
+        run: doxygen -g Doxyfile
          
       #   # Убедитесь, что Doxyfile создается в корне, если он там ожидается
       
