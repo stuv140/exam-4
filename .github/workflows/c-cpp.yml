@@ -18,9 +18,7 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install doxygen -y
 
-      - name: List files in workspace (for debugging)
-        # Этот шаг полезен для отладки, чтобы видеть, что находится в репозитории
-        run: ls -la ${{ github.workspace }}
+
 
       # --- НАЧАЛО БЛОКА, КОТОРЫЙ МОЖНО УДАЛИТЬ, ЕСЛИ DOXYFILE УЖЕ ЕСТЬ И НАСТРОЕН ---
       # Если Doxyfile уже есть в репозитории и настроен, эти шаги не нужны.
@@ -31,6 +29,12 @@ jobs:
         run: doxygen -g Doxyfile
       - name: Create documentation     
         run: doxygen
+        
+      - name: List files in workspace (for debugging)
+        # Этот шаг полезен для отладки, чтобы видеть, что находится в репозитории
+        run: ls -la ${{ github.workspace }}
+
+        
       #   # Убедитесь, что Doxyfile создается в корне, если он там ожидается
       
       #   working-directory: ${{ github.workspace }}
