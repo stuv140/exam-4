@@ -1,27 +1,32 @@
-name: publish
+name: Documentation
 
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
   push:
-    branches:
-      - doc
-  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build-documentation:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          submodules: "true"
-      - name: set version
-        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
-      - name: Generate Documentation
-        uses: mattnotmitt/doxygen-action@edge
-      - name: Publish generated content to GitHub Pages
-        uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
-        with:
-          dir: docs/html
-          branch: gh-pages
-          
-          token: ${{ secrets.ASSES_TOKEN }}
+    - uses: actions/checkout@v2
+    
+    # Build the HTML documentation
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.1.0
+      with:
+          doxyfile-path: ./Doxyfile
+          working-directory: .
+    
+    # Deploy the HTML documentation to GitHub Pages
+    - name: GH Pages Deployment
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.ASSES_TOKEN }}
+        publish_dir: ./doc/html/
+        enable_jekyll: false
+        allow_empty_commit: false
+        force_orphan: true
+        publish_branch: gh-pages
