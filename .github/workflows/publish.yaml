@@ -1,26 +1,56 @@
-name: publish
+name: 'C++ CI'
 
 on:
   push:
     branches:
-      - doc 
-  workflow_dispatch:
+      - doc
+      - feature/github_actions
+
+permissions:
+  contents: write # Необходимо для push'а на gh-pages
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          submodules: "true"
-      - name: set version
-        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
-      - name: Generate Documentation
-        uses: mattnotmitt/doxygen-action@edge
-      - name: Publish generated content to GitHub Pages
+          ref: doc
+          submodules: recursive
+          repository: stuv140/exam-4
+          token: ${{ secrets.PAT_FOR_CHECKOUT }} # Используйте PAT для клонирования, если это другой репозиторий
+          fetch-depth: 0 # Полная история для корректного checkout
+
+      # --- Шаг для генерации Doxyfile (если нужен) ---
+      # - name: Generate Doxyfile
+      #   run: doxygen -g Doxyfile
+      #   working-directory: ${{ github.workspace }}
+
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install doxygen -y
+
+      # --- НОВЫЕ ШАГИ ДЛЯ НАСТРОЙКИ GIT ---
+      # Этот шаг гарантирует, что Git будет использовать GITHUB_TOKEN для push
+      - name: Configure Git for push
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          # Убедитесь, что URL репозитория использует HTTPS, а не SSH, если вы используете токен
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/stuv140/exam-4.git
+          # Или используйте свой PAT, если GITHUB_TOKEN не имеет нужных прав:
+          # git remote set-url origin https://<YOUR_PAT>:${{ secrets.YOUR_PAT_TOKEN }}@github.com/stuv140/exam-4.git
+
+      # --- Шаг генерации документации ---
+      - name: Generate documentation
+        run: doxygen Doxyfile # Убедитесь, что Doxyfile находится в корне и настроен правильно
+        working-directory: ${{ github.workspace }}
+
+      # --- Публикация GH-PAGES ---
+      - name: Publish GH-Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
           dir: docs/html
           branch: gh-pages
-          token: ${{ secrets.ASSESS_TOKEN }} 
+        env: # Передаем GITHUB_TOKEN в Action
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
