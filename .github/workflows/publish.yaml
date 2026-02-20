@@ -1,53 +1,26 @@
-name: 'C++ CI'
+name: publish
 
 on:
   push:
     branches:
       - doc
-      - feature/github_actions
-
-permissions:
-  contents: write
+  workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: doc
-          submodules: recursive
-          repository: stuv140/exam-4
-          # Используем PAT для HTTPS аутентификации
-          token: ${{ secrets.ASSESS_TOKEN }}
-          fetch-depth: 0
-          persist-credentials: true
-          clean: true
-          sparse-checkout-cone-mode: true
-          fetch-tags: false
-          show-progress: true
-          lfs: false
-          set-safe-directory: true
-          # !!! SSH-параметры ДОЛЖНЫ ОТСУТСТВОВАТЬ !!!
-
-      - name: Configure Git for push
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          # Устанавливаем HTTPS URL с PAT
-          git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
-
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install doxygen -y
-      - name: Generate documentation
-        run: doxygen Doxyfile
-        working-directory: ${{ github.workspace }}
-
-      - name: Publish GH-Pages
+          submodules: "true"
+      - name: set version
+        run: echo "PROJECT_NUMBER = `git describe --tags`" >> Doxyfile
+      - name: Generate Documentation
+        uses: mattnotmitt/doxygen-action@edge
+      - name: Publish generated content to GitHub Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
           dir: docs/html
           branch: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }}
+          token: ${{ secrets.ASSESS_TOKEN }}
