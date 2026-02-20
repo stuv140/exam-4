@@ -19,7 +19,8 @@ jobs:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.ASSESS_TOKEN }} # <-- Убедитесь, что это ваш PAT
+          # Используем PAT для HTTPS аутентификации
+          token: ${{ secrets.ASSESS_TOKEN }}
           fetch-depth: 0
           persist-credentials: true
           clean: true
@@ -28,14 +29,13 @@ jobs:
           show-progress: true
           lfs: false
           set-safe-directory: true
-          # !!! SSH-параметры должны отсутствовать здесь !!!
-          # ssh-strict: true
-          # ssh-user: git
+          # !!! SSH-параметры ДОЛЖНЫ ОТСУТСТВОВАТЬ !!!
 
       - name: Configure Git for push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          # Устанавливаем HTTPS URL с PAT
           git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
 
       - name: Install Doxygen
