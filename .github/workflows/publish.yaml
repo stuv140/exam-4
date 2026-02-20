@@ -19,7 +19,7 @@ jobs:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш секретный токен для HTTPS
+          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш PAT для HTTPS
           fetch-depth: 0
           persist-credentials: true
           clean: true
@@ -28,18 +28,17 @@ jobs:
           show-progress: true
           lfs: false
           set-safe-directory: true
-          # ssh-strict: true  <-- Удалено (или закомментировано)
-          # ssh-user: git      <-- Удалено (или закомментировано)
+          # ssh-strict: true  <-- Удалено
+          # ssh-user: git      <-- Удалено
 
       # --- Настройка Git для push ---
       - name: Configure Git for push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          # Используем ASSESS_TOKEN для HTTPS URL
-          git remote set-url origin https://x-access-token:${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
-          # Если ASSESS_TOKEN - это обычный PAT, попробуйте:
-          # git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
+          # Используйте этот URL, если ASSESS_TOKEN - это ваш PAT
+          # Формат: https://<ВАШ_PAT>@github.com/owner/repo.git
+          git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
 
       # --- Генерация документации ---
       - name: Install Doxygen
@@ -55,4 +54,7 @@ jobs:
           dir: docs/html
           branch: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }} # Передаем ASSESS_TOKEN
+          # Если ASSESS_TOKEN - это PAT, вы можете передать его сюда
+          # вместо GITHUB_TOKEN, если Action поддерживает это.
+          # Или используйте GITHUB_TOKEN, если у него есть права.
+          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }}
