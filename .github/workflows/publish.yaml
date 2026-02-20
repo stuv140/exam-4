@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - doc
-      - feature/github_actions 
+      - feature/github_actions
 
 permissions:
-  contents: write # Необходимо для push'а на gh-pages
+  contents: write
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш PAT для HTTPS
+          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш новый PAT
           fetch-depth: 0
           persist-credentials: true
           clean: true
@@ -28,33 +28,23 @@ jobs:
           show-progress: true
           lfs: false
           set-safe-directory: true
-          # ssh-strict: true  <-- Удалено
-          # ssh-user: git      <-- Удалено
 
-      # --- Настройка Git для push ---
       - name: Configure Git for push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          # Используйте этот URL, если ASSESS_TOKEN - это ваш PAT
-          # Формат: https://<ВАШ_PAT>@github.com/owner/repo.git
           git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
 
-      # --- Генерация документации ---
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install doxygen -y
       - name: Generate documentation
-        run: doxygen Doxyfile # Убедитесь, что Doxyfile существует
+        run: doxygen Doxyfile
         working-directory: ${{ github.workspace }}
 
-      # --- Публикация GH-PAGES ---
       - name: Publish GH-Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
           dir: docs/html
           branch: gh-pages
         env:
-          # Если ASSESS_TOKEN - это PAT, вы можете передать его сюда
-          # вместо GITHUB_TOKEN, если Action поддерживает это.
-          # Или используйте GITHUB_TOKEN, если у него есть права.
           GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }}
