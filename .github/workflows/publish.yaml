@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - doc
-      - feature/github_actions
+      - feature/github_actions 
 
 permissions:
   contents: write # Необходимо для push'а на gh-pages
