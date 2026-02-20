@@ -19,7 +19,7 @@ jobs:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.ASSESS_TOKEN }} # <-- ИСПОЛЬЗУЕТСЯ ВАШ НОВЫЙ СЕКРЕТНЫЙ ТОКЕН
+          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш секретный токен для HTTPS
           fetch-depth: 0
           persist-credentials: true
           clean: true
@@ -28,18 +28,17 @@ jobs:
           show-progress: true
           lfs: false
           set-safe-directory: true
+          # ssh-strict: true  <-- Удалено (или закомментировано)
+          # ssh-user: git      <-- Удалено (или закомментировано)
 
       # --- Настройка Git для push ---
       - name: Configure Git for push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          # Предполагается, что ASSESS_TOKEN имеет права на запись.
-          # Если ASSESS_TOKEN - это PAT, он может быть использован здесь.
-          # Если ASSESS_TOKEN - это GITHUB_TOKEN, убедитесь, что он имеет права write.
+          # Используем ASSESS_TOKEN для HTTPS URL
           git remote set-url origin https://x-access-token:${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
-          # ВАЖНО: Если ASSESS_TOKEN это НЕ GITHUB_TOKEN, и он не работает
-          # как x-access-token, попробуйте так (если ASSESS_TOKEN - ваш PAT):
+          # Если ASSESS_TOKEN - это обычный PAT, попробуйте:
           # git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
 
       # --- Генерация документации ---
@@ -56,7 +55,4 @@ jobs:
           dir: docs/html
           branch: gh-pages
         env:
-          # Важно: Убедитесь, что ASSESS_TOKEN имеет права на запись для gh-pages.
-          # Если ASSESS_TOKEN - это PAT, вы можете передать его сюда.
-          # Если это GITHUB_TOKEN, убедитесь, что он настроен для записи.
-          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }} # <-- Передаем ASSESS_TOKEN в env для action
+          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }} # Передаем ASSESS_TOKEN
