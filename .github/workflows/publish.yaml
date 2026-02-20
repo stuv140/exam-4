@@ -19,7 +19,7 @@ jobs:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.ASSESS_TOKEN }} # <-- Ваш новый PAT
+          token: ${{ secrets.ASSESS_TOKEN }} # <-- Убедитесь, что это ваш PAT
           fetch-depth: 0
           persist-credentials: true
           clean: true
@@ -28,6 +28,9 @@ jobs:
           show-progress: true
           lfs: false
           set-safe-directory: true
+          # !!! SSH-параметры должны отсутствовать здесь !!!
+          # ssh-strict: true
+          # ssh-user: git
 
       - name: Configure Git for push
         run: |
