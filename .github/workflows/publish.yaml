@@ -23,4 +23,5 @@ jobs:
         with:
           dir: docs/html
           branch: gh-pages
+          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }}
           token: ${{ secrets.ASSESS_TOKEN }}
