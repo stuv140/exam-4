@@ -13,36 +13,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           ref: doc
           submodules: recursive
           repository: stuv140/exam-4
-          token: ${{ secrets.PAT_FOR_CHECKOUT }} # Используйте PAT для клонирования, если это другой репозиторий
-          fetch-depth: 0 # Полная история для корректного checkout
+          token: ${{ secrets.ASSESS_TOKEN }} # <-- ИСПОЛЬЗУЕТСЯ ВАШ НОВЫЙ СЕКРЕТНЫЙ ТОКЕН
+          fetch-depth: 0
+          persist-credentials: true
+          clean: true
+          sparse-checkout-cone-mode: true
+          fetch-tags: false
+          show-progress: true
+          lfs: false
+          set-safe-directory: true
 
-      # --- Шаг для генерации Doxyfile (если нужен) ---
-      # - name: Generate Doxyfile
-      #   run: doxygen -g Doxyfile
-      #   working-directory: ${{ github.workspace }}
-
-      - name: Install Doxygen
-        run: sudo apt-get update && sudo apt-get install doxygen -y
-
-      # --- НОВЫЕ ШАГИ ДЛЯ НАСТРОЙКИ GIT ---
-      # Этот шаг гарантирует, что Git будет использовать GITHUB_TOKEN для push
+      # --- Настройка Git для push ---
       - name: Configure Git for push
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          # Убедитесь, что URL репозитория использует HTTPS, а не SSH, если вы используете токен
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/stuv140/exam-4.git
-          # Или используйте свой PAT, если GITHUB_TOKEN не имеет нужных прав:
-          # git remote set-url origin https://<YOUR_PAT>:${{ secrets.YOUR_PAT_TOKEN }}@github.com/stuv140/exam-4.git
+          # Предполагается, что ASSESS_TOKEN имеет права на запись.
+          # Если ASSESS_TOKEN - это PAT, он может быть использован здесь.
+          # Если ASSESS_TOKEN - это GITHUB_TOKEN, убедитесь, что он имеет права write.
+          git remote set-url origin https://x-access-token:${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
+          # ВАЖНО: Если ASSESS_TOKEN это НЕ GITHUB_TOKEN, и он не работает
+          # как x-access-token, попробуйте так (если ASSESS_TOKEN - ваш PAT):
+          # git remote set-url origin https://${{ secrets.ASSESS_TOKEN }}@github.com/stuv140/exam-4.git
 
-      # --- Шаг генерации документации ---
+      # --- Генерация документации ---
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install doxygen -y
       - name: Generate documentation
-        run: doxygen Doxyfile # Убедитесь, что Doxyfile находится в корне и настроен правильно
+        run: doxygen Doxyfile # Убедитесь, что Doxyfile существует
         working-directory: ${{ github.workspace }}
 
       # --- Публикация GH-PAGES ---
@@ -51,6 +55,8 @@ jobs:
         with:
           dir: docs/html
           branch: gh-pages
-        env: # Передаем GITHUB_TOKEN в Action
-           token: ${{ secrets.ASSESS_TOKEN }} 
- 
+        env:
+          # Важно: Убедитесь, что ASSESS_TOKEN имеет права на запись для gh-pages.
+          # Если ASSESS_TOKEN - это PAT, вы можете передать его сюда.
+          # Если это GITHUB_TOKEN, убедитесь, что он настроен для записи.
+          GITHUB_TOKEN: ${{ secrets.ASSESS_TOKEN }} # <-- Передаем ASSESS_TOKEN в env для action
