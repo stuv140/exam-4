@@ -3,30 +3,29 @@ name: Doxygen Documentation CI
 on:
   push:
     branches:
-      - doc  # Или ваша основная ветка, например, 'master'
+      - doc  # Изменено с 'main' на 'doc'
   pull_request:
     branches:
-      - doc  # Или ваша основная ветка
+      - doc  # Изменено с 'main' на 'doc'
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Используем последнюю версию Ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Клонирует ваш репозиторий
+        uses: actions/checkout@v4
 
-      - name: Set up Doxygen
-        uses: sbruder/doxygen-action@v1.0.1
-        with:
-          # Путь к вашему Doxyfile. Если он в корне, то '.'
-          doxyfile-path: .
-          # Дополнительные аргументы для Doxygen (опционально)
-          # doxygen-args: "-v"
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen
+        shell: bash
+
+      - name: Generate Documentation
+        run: doxygen ${{ github.workspace }}/Doxyfile
+        shell: bash
 
       - name: Deploy documentation to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3 # Действие для развертывания на GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Автоматически предоставляемый токен
-          publish_dir: ./docs/html # Укажите директорию, куда Doxygen генерирует документацию (согласно вашему Doxyfile)
-          # publish_branch: gh-pages # Если вы хотите публиковать на отдельную ветку gh-pages (часто используется)
-          # cname: your.domain.com # Если вы используете собственный домен
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          # publish_branch: gh-pages # Если используете отдельную ветку
