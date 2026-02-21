@@ -3,10 +3,10 @@ name: Doxygen Documentation CI
 on:
   push:
     branches:
-      - doc  # Изменено с 'main' на 'doc'
+      - doc  # Или ваша основная ветка, например, 'master'
   pull_request:
     branches:
-      - doc  # Изменено с 'main' на 'doc'
+      - doc  # Или ваша основная ветка
 
 jobs:
   build:
@@ -19,7 +19,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y doxygen
         shell: bash
 
+      - name: Create output directory
+        run: mkdir -p docs # Создаем директорию 'docs', флаг -p гарантирует, что она не будет создана, если уже существует
+        shell: bash
+
       - name: Generate Documentation
+        # Убедитесь, что Doxyfile находится в корне вашего репозитория.
+        # github.workspace - это корневая директория вашего репозитория на сервере Actions.
         run: doxygen ${{ github.workspace }}/Doxyfile
         shell: bash
 
@@ -27,5 +33,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Убедитесь, что OUTPUT_DIRECTORY в вашем Doxyfile установлен в 'docs/html'
           publish_dir: ./docs/html
           # publish_branch: gh-pages # Если используете отдельную ветку
