@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4 # Клонирует ваш репозиторий
 
       - name: Set up Doxygen
-        uses: mattijsfv/doxygen-action@v1.2.0 # Используем готовое действие для Doxygen
+        uses: sbruder/doxygen-action@v1.0.1
         with:
           # Путь к вашему Doxyfile. Если он в корне, то '.'
           doxyfile-path: .
