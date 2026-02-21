@@ -1,0 +1,648 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\info 
+{\title {\comment SFINAE  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+1.1 \par
+}}SFINAE}
+{\comment Generated by doxygen 1.9.8.}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt SFINAE}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 1.1\par\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b EnableIf< condition, Type >} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'81\'D1\'82\'D1\'80\'D1\'83\'D0\'BA\'D1\'82\'D1\'83\'D1\'80\'D0\'B0 \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D0\'BA\'D0\'B8 \'D1\'82\'D0\'B8\'D0\'BF\'D0\'B0 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'BF\'D0\'B5\'D1\'80\'D0\'B5\'D0\'B4\'D0\'B0\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'B2 \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b EnableIf< true, Type >} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAJ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all documented files with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b src/{\b Template.hpp} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+EnableIf< condition, Type > Struct Template Reference\par \pard\plain 
+{\tc\tcl2 \v EnableIf< condition, Type >}
+{\xe \v EnableIf< condition, Type >}
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'81\'D1\'82\'D1\'80\'D1\'83\'D0\'BA\'D1\'82\'D1\'83\'D1\'80\'D0\'B0 \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D0\'BA\'D0\'B8 \'D1\'82\'D0\'B8\'D0\'BF\'D0\'B0 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'BF\'D0\'B5\'D1\'80\'D0\'B5\'D0\'B4\'D0\'B0\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'B2 \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD }}\par
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+template<bool condition, typename Type>\par
+struct EnableIf< condition, Type >\par
+}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'81\'D1\'82\'D1\'80\'D1\'83\'D0\'BA\'D1\'82\'D1\'83\'D1\'80\'D0\'B0 \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D0\'BA\'D0\'B8 \'D1\'82\'D0\'B8\'D0\'BF\'D0\'B0 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'BF\'D0\'B5\'D1\'80\'D0\'B5\'D0\'B4\'D0\'B0\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'B2 \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \par
+}{
+Definition at line {\b 20} of file {\b Template.hpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+src/{\b Template.hpp}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+EnableIf< true, Type > Struct Template Reference\par \pard\plain 
+{\tc\tcl2 \v EnableIf< true, Type >}
+{\xe \v EnableIf< true, Type >}
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Types\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+using {\b type} = Type\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+template<typename Type>\par
+struct EnableIf< true, Type >\par
+}
+\par
+{
+Definition at line {\b 23} of file {\b Template.hpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Typedef Documentation\par
+\pard\plain 
+{\xe \v type\:EnableIf< true, Type >}
+{\xe \v EnableIf< true, Type >\:type}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename Type > using {\b EnableIf}< true, Type >::type =  Type}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line {\b 25} of file {\b Template.hpp}.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+src/{\b Template.hpp}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+src/Template.hpp File Reference\par \pard\plain 
+{\tc\tcl2 \v src/Template.hpp}
+{\xe \v src/Template.hpp}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+struct {\b EnableIf< true, Type >}}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename U > void {\b PrintInt} (const U number)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D0\'98\'D0\'BD\'D1\'82\'D0\'B5\'D1\'80\'D0\'BF\'D1\'80\'D0\'B5\'D1\'82\'D0\'B8\'D1\'80\'D1\'83\'D0\'B5\'D1\'82 32-\'D0\'B1\'D0\'B8\'D1\'82\'D0\'BD\'D0\'BE\'D0\'B5 \'D1\'86\'D0\'B5\'D0\'BB\'D0\'BE\'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B5\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B5 \'D0\'B7\'D0\'BD\'D0\'B0\'D1\'87\'D0\'B5\'D0\'BD\'D0\'B8\'D0\'B5 \'D0\'BA\'D0\'B0\'D0\'BA IP-\'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81 \'D0\'B8 \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82 \'D0\'B5\'D0\'B3\'D0\'BE \'D0\'BD\'D0\'B0 \'D1\'8D\'D0\'BA\'D1\'80\'D0\'B0\'D0\'BD. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename T1 , typename... T2> auto {\b if_make_types} (T2... values)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82, \'D1\'87\'D1\'82\'D0\'BE \'D1\'83 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'BE\'D0\'B2 \'D0\'B2 \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD\'D0\'B5 \'D0\'BE\'D0\'B4\'D0\'B8\'D0\'BD\'D0\'B0\'D0\'BA\'D0\'BE\'D0\'B2\'D1\'8B\'D0\'B9 \'D1\'82\'D0\'B8\'D0\'BF \'D0\'B4\'D0\'B0\'D0\'BD\'D0\'BD\'D1\'8B\'D1\'85 }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename T > {\b EnableIf}<!std::is_integral< T >::value &&std::is_same< T, std::string >::value, void >::type {\b print_ip} (T str)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83 std::string }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename T > {\b EnableIf}<!std::is_integral< T >::value &&(std::is_same< T, std::vector< typenameT::value_type > >::value||std::is_same< T, std::list< typenameT::value_type > >::value), void >::type {\b print_ip} (T container)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83: std::vector \'D0\'B8\'D0\'BB\'D0\'B8 std::list }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename T > {\b EnableIf}< std::is_integral< T >::value, void >::type {\b print_ip} (T number)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'86\'D0\'B5\'D0\'BB\'D1\'8B\'D0\'BC \'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B0\'D0\'BC }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+template<typename... Ts> void {\b print_ip} (const std::tuple< Ts... > &ip)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83 std::tuple }{
+}\par
+}\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v if_make_types\:Template.hpp}
+{\xe \v Template.hpp\:if_make_types}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename T1 , typename... T2> auto if_make_types (T2...  {\i values})}}
+\par
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82, \'D1\'87\'D1\'82\'D0\'BE \'D1\'83 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'BE\'D0\'B2 \'D0\'B2 \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD\'D0\'B5 \'D0\'BE\'D0\'B4\'D0\'B8\'D0\'BD\'D0\'B0\'D0\'BA\'D0\'BE\'D0\'B2\'D1\'8B\'D0\'B9 \'D1\'82\'D0\'B8\'D0\'BF \'D0\'B4\'D0\'B0\'D0\'BD\'D0\'BD\'D1\'8B\'D1\'85 }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Template Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i T2} \cell }{\'D0\'BF\'D0\'B5\'D1\'80\'D0\'B2\'D1\'8B\'D0\'B9 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D0\'B2 \'D0\'BA\'D0\'BE\'D0\'BD\'D1\'82\'D0\'B5\'D0\'B9\'D0\'BD\'D0\'B5\'D1\'80\'D0\'B5 \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i values} \cell }{\'D0\'BF\'D0\'BE\'D1\'81\'D0\'BB\'D0\'B5\'D0\'B4\'D1\'83\'D1\'8E\'D1\'89\'D0\'B8\'D0\'B5 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D1\'8B \'D0\'B2 \'D0\'BA\'D0\'BE\'D0\'BD\'D1\'82\'D0\'B5\'D0\'B9\'D0\'BD\'D0\'B5\'D1\'80\'D0\'B5 \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+\'D0\'BA\'D0\'BE\'D0\'BD\'D1\'82\'D0\'B5\'D0\'B9\'D0\'BD\'D0\'B5\'D1\'80 std::make_tuple \par
+}}}{
+Definition at line {\b 34} of file {\b Template.hpp}.}\par
+}
+{\xe \v print_ip\:Template.hpp}
+{\xe \v Template.hpp\:print_ip}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename... Ts> void print_ip (const std::tuple< Ts... > &  {\i ip})}}
+\par
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83 std::tuple }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i ip} \cell }{\'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BD\'D0\'B5\'D0\'BA\'D0\'BE\'D1\'82\'D0\'BE\'D1\'80\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'B5\'D1\'81\'D0\'BB\'D0\'B8 \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D0\'BC\'D0\'BE\'D0\'B5 \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'B8\'D0\'B5 \'D0\'B8\'D1\'81\'D1\'82\'D0\'B8\'D0\'BD\'D0\'BD\'D0\'BE, \'D1\'82\'D0\'BE \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82\'D1\'81\'D1\'8F \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'BD\'D1\'8B\'D0\'B9 ip \'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81 \'D1\'85\'D1\'80\'D0\'B0\'D0\'BD\'D1\'8F\'D1\'89\'D0\'B8\'D0\'B9\'D1\'81\'D1\'8F \'D0\'B2 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B5 \cell }
+{\row }
+}
+}{
+Definition at line {\b 128} of file {\b Template.hpp}.}\par
+}
+{\xe \v print_ip\:Template.hpp}
+{\xe \v Template.hpp\:print_ip}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename T > {\b EnableIf}<!std::is_integral< T >::value &&(std::is_same< T, std::vector< typenameT::value_type > >::value||std::is_same< T, std::list< typenameT::value_type > >::value), void >::type print_ip (T  {\i container})}}
+\par
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83: std::vector \'D0\'B8\'D0\'BB\'D0\'B8 std::list }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i container} \cell }{\'D1\'88\'D0\'B0\'D0\'B1\'D0\'BE\'D0\'BD \'D0\'BD\'D0\'B5\'D0\'BA\'D0\'BE\'D1\'82\'D0\'BE\'D1\'80\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'B5\'D1\'81\'D0\'BB\'D0\'B8 \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D0\'BC\'D0\'BE\'D0\'B5 \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'B8\'D0\'B5 \'D0\'B8\'D1\'81\'D1\'82\'D0\'B8\'D0\'BD\'D0\'BD\'D0\'BE, \'D1\'82\'D0\'BE \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82\'D1\'81\'D1\'8F \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'BD\'D1\'8B\'D0\'B9 ip \'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81 \'D1\'85\'D1\'80\'D0\'B0\'D0\'BD\'D1\'8F\'D1\'89\'D0\'B8\'D0\'B9\'D1\'81\'D1\'8F \'D0\'B2 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B5 \cell }
+{\row }
+}
+}{
+Definition at line {\b 55} of file {\b Template.hpp}.}\par
+}
+{\xe \v print_ip\:Template.hpp}
+{\xe \v Template.hpp\:print_ip}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename T > {\b EnableIf}< std::is_integral< T >::value, void >::type print_ip (T  {\i number})}}
+\par
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'86\'D0\'B5\'D0\'BB\'D1\'8B\'D0\'BC \'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B0\'D0\'BC }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i number} \cell }{\'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BD\'D0\'B5\'D0\'BA\'D0\'BE\'D1\'82\'D0\'BE\'D1\'80\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'B5\'D1\'81\'D0\'BB\'D0\'B8 \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D0\'BC\'D0\'BE\'D0\'B5 \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'B8\'D0\'B5 \'D0\'B8\'D1\'81\'D1\'82\'D0\'B8\'D0\'BD\'D0\'BD\'D0\'BE, \'D1\'82\'D0\'BE \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82\'D1\'81\'D1\'8F \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'BD\'D1\'8B\'D0\'B9 ip \'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81 \'D1\'85\'D1\'80\'D0\'B0\'D0\'BD\'D1\'8F\'D1\'89\'D0\'B8\'D0\'B9\'D1\'81\'D1\'8F \'D0\'B2 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B5 \cell }
+{\row }
+}
+}{
+Definition at line {\b 72} of file {\b Template.hpp}.}\par
+}
+{\xe \v print_ip\:Template.hpp}
+{\xe \v Template.hpp\:print_ip}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename T > {\b EnableIf}<!std::is_integral< T >::value &&std::is_same< T, std::string >::value, void >::type print_ip (T  {\i str})}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D1\'88\'D0\'B0\'D0\'B1\'D0\'BB\'D0\'BE\'D0\'BD \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D1\'82 \'D1\'81\'D0\'BE\'D0\'BE\'D1\'82\'D0\'B2\'D0\'B5\'D1\'82\'D1\'81\'D1\'82\'D0\'B2\'D1\'83\'D0\'B5\'D1\'82 \'D0\'BB\'D0\'B8 \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D1\'82\'D0\'B8\'D0\'BF\'D1\'83 std::string }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i str} \cell }{\'D1\'88\'D0\'B0\'D0\'B1\'D0\'BE\'D0\'BD \'D0\'BD\'D0\'B5\'D0\'BA\'D0\'BE\'D1\'82\'D0\'BE\'D1\'80\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82\'D0\'B0 \'D0\'B5\'D1\'81\'D0\'BB\'D0\'B8 \'D0\'BF\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B5\'D1\'80\'D1\'8F\'D0\'B5\'D0\'BC\'D0\'BE\'D0\'B5 \'D1\'83\'D1\'81\'D0\'BB\'D0\'BE\'D0\'B2\'D0\'B8\'D0\'B5 \'D0\'B8\'D1\'81\'D1\'82\'D0\'B8\'D0\'BD\'D0\'BD\'D0\'BE, \'D1\'82\'D0\'BE \'D0\'BE\'D0\'B1\'D1\'8A\'D0\'B5\'D0\'BA\'D1\'82 \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82\'D1\'81\'D1\'8F \'D0\'BD\'D0\'B0 \'D1\'8D\'D0\'BA\'D1\'80\'D0\'B0\'D0\'BD \cell }
+{\row }
+}
+}{
+Definition at line {\b 46} of file {\b Template.hpp}.}\par
+}
+{\xe \v PrintInt\:Template.hpp}
+{\xe \v Template.hpp\:PrintInt}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+template<typename U > void PrintInt (const U  {\i number})}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'D0\'98\'D0\'BD\'D1\'82\'D0\'B5\'D1\'80\'D0\'BF\'D1\'80\'D0\'B5\'D1\'82\'D0\'B8\'D1\'80\'D1\'83\'D0\'B5\'D1\'82 32-\'D0\'B1\'D0\'B8\'D1\'82\'D0\'BD\'D0\'BE\'D0\'B5 \'D1\'86\'D0\'B5\'D0\'BB\'D0\'BE\'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B5\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B5 \'D0\'B7\'D0\'BD\'D0\'B0\'D1\'87\'D0\'B5\'D0\'BD\'D0\'B8\'D0\'B5 \'D0\'BA\'D0\'B0\'D0\'BA IP-\'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81 \'D0\'B8 \'D0\'B2\'D1\'8B\'D0\'B2\'D0\'BE\'D0\'B4\'D0\'B8\'D1\'82 \'D0\'B5\'D0\'B3\'D0\'BE \'D0\'BD\'D0\'B0 \'D1\'8D\'D0\'BA\'D1\'80\'D0\'B0\'D0\'BD. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Template Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i U} \cell }{\'D0\'A6\'D0\'B5\'D0\'BB\'D0\'BE\'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B5\'D0\'BD\'D0\'BD\'D1\'8B\'D0\'B9 \'D1\'82\'D0\'B8\'D0\'BF (\'D0\'BE\'D0\'B6\'D0\'B8\'D0\'B4\'D0\'B0\'D0\'B5\'D1\'82\'D1\'81\'D1\'8F, \'D1\'87\'D1\'82\'D0\'BE \'D0\'BE\'D0\'BD \'D0\'B1\'D1\'83\'D0\'B4\'D0\'B5\'D1\'82 \'D0\'B8\'D0\'BC\'D0\'B5\'D1\'82\'D1\'8C \'D1\'80\'D0\'B0\'D0\'B7\'D0\'BC\'D0\'B5\'D1\'80 \'D0\'BD\'D0\'B5 \'D0\'BC\'D0\'B5\'D0\'BD\'D0\'B5\'D0\'B5 2 \'D0\'B1\'D0\'B0\'D0\'B9\'D1\'82). \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i number} \cell }{\'D0\'A6\'D0\'B5\'D0\'BB\'D0\'BE\'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B5\'D0\'BD\'D0\'BD\'D0\'BE\'D0\'B5 \'D0\'B7\'D0\'BD\'D0\'B0\'D1\'87\'D0\'B5\'D0\'BD\'D0\'B8\'D0\'B5, \'D0\'BF\'D1\'80\'D0\'B5\'D0\'B4\'D1\'81\'D1\'82\'D0\'B0\'D0\'B2\'D0\'BB\'D1\'8F\'D1\'8E\'D1\'89\'D0\'B5\'D0\'B5 IP-\'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81. \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Warning\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+\'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BA\'D0\'BE\'D1\'80\'D1\'80\'D0\'B5\'D0\'BA\'D1\'82\'D0\'BD\'D0\'BE\'D0\'B3\'D0\'BE \'D0\'BF\'D1\'80\'D0\'B5\'D0\'B4\'D1\'81\'D1\'82\'D0\'B0\'D0\'B2\'D0\'BB\'D0\'B5\'D0\'BD\'D0\'B8\'D1\'8F IP-\'D0\'B0\'D0\'B4\'D1\'80\'D0\'B5\'D1\'81\'D0\'B0 \'D1\'84\'D1\'83\'D0\'BD\'D0\'BA\'D1\'86\'D0\'B8\'D1\'8F \'D0\'BE\'D0\'B6\'D0\'B8\'D0\'B4\'D0\'B0\'D0\'B5\'D1\'82, \'D1\'87\'D1\'82\'D0\'BE \'D0\'B2\'D1\'85\'D0\'BE\'D0\'B4\'D0\'BD\'D0\'BE\'D0\'B9 \'D1\'82\'D0\'B8\'D0\'BF T \'D0\'B1\'D1\'83\'D0\'B4\'D0\'B5\'D1\'82 \'D0\'B8\'D0\'BC\'D0\'B5\'D1\'82\'D1\'8C \'D1\'80\'D0\'B0\'D0\'B7\'D0\'BC\'D0\'B5\'D1\'80 \'D0\'BD\'D0\'B5 \'D0\'BC\'D0\'B5\'D0\'BD\'D0\'B5\'D0\'B5 4 \'D0\'B1\'D0\'B0\'D0\'B9\'D1\'82. \par
+}}}{
+Definition at line {\b 7} of file {\b Template.hpp}.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Template.hpp\par \pard\plain 
+{\tc\tcl2 \v src/Template.hpp}
+{\xe \v src/Template.hpp}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+Go to the documentation of this file.\par
+{
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 00001 \par
+00006 {\cf17 template}<{\cf17 typename} U>\par
+00007 {\cf18 void} PrintInt({\cf17 const} U number) \{\par
+00008     {\cf20 /*  int i = sizeof(number);}\par
+00009 {\cf20 }\par
+00010 {\cf20           for (int j = (i - 1); j > 0; --j) \{}\par
+00011 {\cf20           // std::cout << (temp >> 24 & 0xFF) << "." << (temp >> 16 & 0xFF) << "." << (temp >> 8 & 0xFF) << "." << (temp >> 0 & 0xFF) << std::endl;}\par
+00012 {\cf20           std::cout << (number >> (j * 8) & 0xFF) << ".";}\par
+00013 {\cf20           \}}\par
+00014 {\cf20       std::cout << (number >> 0 & 0xFF) << "\\n"; */}\par
+00015 \}\par
+00016 {\cf17 template} <{\cf18 bool} condition, {\cf17 typename} Type>\par
+00020 {\cf17 struct }EnableIf;\par
+00021 \par
+00022 {\cf17 template} <{\cf17 typename} Type>\par
+00023 {\cf17 struct }EnableIf<true, Type>\par
+00024 \{\par
+00025     {\cf17 using }type = Type;\par
+00026 \};\par
+00033 {\cf17 template}<{\cf17 typename} T1, {\cf17 typename}... T2>\par
+00034 {\cf17 auto} if_make_types(T2... values) \{\par
+00035 \par
+00036     {\cf17 static_assert}((std::is_same_v<T2, T1> && ...),\par
+00037         {\cf22 "All elements must be convertible to the specified target type."});\par
+00038 \par
+00039     {\cf19 return} std::make_tuple(std::forward<T2>(values)...);\par
+00040 \}\par
+00046 {\cf17 template} <{\cf17 typename} T> {\cf17 typename} EnableIf<!std::is_integral<T>::value&& std::is_same<T, std::string>::value, {\cf18 void}>::type print_ip(T str) \{\par
+00047     std::cout << str << std::endl;\par
+00048 \}\par
+00049 \par
+00055 {\cf17 template} <{\cf17 typename} T> {\cf17 typename} EnableIf<!std::is_integral<T>::value && (std::is_same<T, std::vector<typename T::value_type>>::value || std::is_same<T, std::list<typename T::value_type>>::value), {\cf18 void}>::type print_ip(T container) \{\par
+00056     {\cf17 auto} num = container.size();\par
+00057     {\cf19 for} ({\cf17 auto} elem : container)\par
+00058     \{\par
+00059         std::cout << elem;\par
+00060         --num;\par
+00061         {\cf19 if} (num) \{\par
+00062             std::cout << {\cf22 "."};\par
+00063         \}\par
+00064     \}\par
+00065     std::cout << std::endl;\par
+00066 \}\par
+00072 {\cf17 template} <{\cf17 typename} T> {\cf17 typename} EnableIf<std::is_integral<T>::value, {\cf18 void}>::type print_ip(T number)\par
+00073 \{\par
+00074     {\cf17 const} {\cf17 auto} n = {\cf17 sizeof}(number);\par
+00075     {\cf19 switch} (n)\par
+00076     \{\par
+00077         {\cf19 case} {\cf17 sizeof}(int8_t) :\par
+00078         \{\par
+00079             uint8_t temp = number; {\cf20 // uint8_t \'D0\'BF\'D1\'80\'D0\'B8 \'D0\'BF\'D0\'B5\'D1\'80\'D0\'B5\'D0\'B4\'D0\'B0\'D1\'87\'D0\'B8 -1 = 255, \'D1\'82.\'D0\'BA. \'D1\'80\'D0\'B5\'D0\'B0\'D0\'BB\'D0\'B8\'D0\'B7\'D1\'83\'D0\'B5\'D1\'82\'D1\'81\'D1\'8F \'D0\'B2\'D1\'8B\'D1\'85\'D0\'BE\'D0\'B4 \'D0\'B7\'D0\'B0 \'D0\'B4\'D0\'B8\'D0\'B0\'D0\'BF\'D0\'B0\'D0\'B7\'D0\'BE\'D0\'BD \'D0\'B7\'D0\'BD\'D0\'B0\'D1\'87\'D0\'B5\'D0\'BD\'D0\'B8\'D0\'B9 \'D0\'B4\'D0\'BB\'D1\'8F \'D1\'8D\'D1\'82\'D0\'BE\'D0\'B3\'D0\'BE \'D1\'82\'D0\'B8\'D0\'BF\'D0\'B0}\par
+00080             std::cout << (int)temp << std::endl; {\cf20 //\'D0\'BC\'D0\'BE\'D0\'B6\'D0\'BD\'D0\'BE \'D1\'80\'D0\'B0\'D1\'81\'D0\'BA\'D0\'BE\'D0\'BC\'D0\'B5\'D0\'BD\'D1\'82\'D0\'B8\'D1\'80\'D0\'BE\'D0\'B2\'D0\'B0\'D1\'82\'D1\'8C PrintInt \'D1\'80\'D0\'B5\'D0\'B7\'D1\'83\'D0\'BB\'D1\'8C\'D1\'82\'D0\'B0\'D1\'82 \'D1\'82\'D0\'B0\'D0\'BA\'D0\'BE\'D0\'B9 \'D0\'B6\'D0\'B5, \'D0\'BD\'D0\'BE \'D1\'82\'D0\'B0\'D0\'BA \'D0\'BD\'D0\'B0 \'D0\'BC\'D0\'BE\'D0\'B9 \'D0\'B2\'D0\'B7\'D0\'B3\'D0\'BB\'D1\'8F\'D0\'B4 \'D0\'B1\'D1\'8B\'D1\'81\'D1\'82\'D1\'80\'D0\'B5\'D0\'B5}\par
+00081             {\cf20 //  PrintInt(temp);}\par
+00082             {\cf19 break};\par
+00083         \}\par
+00084         {\cf19 case} {\cf17 sizeof}(int16_t) :\par
+00085         \{\par
+00086             uint16_t temp = number; {\cf20 // \'D0\'BF\'D0\'BE \'D0\'B0\'D0\'BD\'D0\'BE\'D0\'BB\'D0\'BE\'D0\'B3\'D0\'B8\'D0\'B8 \'D1\'81 uint8_t  \'D0\'B2 \'D0\'BF\'D0\'BE\'D0\'B4\'D0\'BE\'D0\'B1\'D0\'BD\'D1\'8B\'D1\'85 \'D0\'BC\'D0\'B5\'D1\'81\'D1\'82\'D0\'B0\'D1\'85 \'D0\'B8\'D1\'81\'D0\'BF\'D0\'BE\'D0\'BB\'D1\'8C\'D0\'B7\'D1\'83\'D0\'B5\'D0\'BC \'D0\'B1\'D0\'B5\'D0\'B7\'D0\'B7\'D0\'BD\'D0\'B0\'D0\'BA\'D0\'BE\'D0\'B2\'D1\'8B\'D0\'B5 \'D1\'87\'D0\'B8\'D1\'81\'D0\'BB\'D0\'B0.}\par
+00087             {\cf20 /* int i = sizeof(int16_t);}\par
+00088 {\cf20 }\par
+00089 {\cf20              for (int j = sizeof(temp) - 1; j > 0; --j) \{}\par
+00090 {\cf20                  std::cout << (temp >> (j & 0xFF)) << ".";}\par
+00091 {\cf20              \}}\par
+00092 {\cf20              std::cout << (temp >> (0xFF)) << "\\n";*/}\par
+00093 \par
+00094             PrintInt(temp);\par
+00095             {\cf19 break};\par
+00096         \}\par
+00097         {\cf19 case} {\cf17 sizeof}(int32_t) :\par
+00098         \{\par
+00099             uint32_t temp = number;\par
+00100 \par
+00101             PrintInt(temp);\par
+00102 \par
+00103             {\cf19 break};\par
+00104         \}\par
+00105         {\cf19 case} {\cf17 sizeof}(int64_t) :\par
+00106         \{\par
+00107             uint64_t temp = number;\par
+00108 \par
+00109             PrintInt(temp);\par
+00110             {\cf19 break};\par
+00111         \}\par
+00112 \par
+00113         {\cf19 default}:\par
+00114         \{\par
+00115             std::cerr << {\cf22 "invalid type"} << std::endl;\par
+00116             {\cf19 break};\par
+00117         \}\par
+00118     \}\par
+00119 \par
+00120 \par
+00121 \}\par
+00127 {\cf17 template} <{\cf17 typename}... Ts>\par
+00128 {\cf18 void} print_ip({\cf17 const} std::tuple<Ts...>& ip) \{\par
+00129 \par
+00130     {\cf18 bool} first = {\cf17 true};\par
+00131     std::apply([&]({\cf17 const} {\cf17 auto}&... args) \{\par
+00132 \par
+00133         (([&]() \{ {\cf20 // \'D0\'92\'D0\'BD\'D1\'83\'D1\'82\'D1\'80\'D0\'B5\'D0\'BD\'D0\'BD\'D1\'8F\'D1\'8F \'D0\'BB\'D1\'8F\'D0\'BC\'D0\'B1\'D0\'B4\'D0\'B0 \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BE\'D0\'B1\'D1\'80\'D0\'B0\'D0\'B1\'D0\'BE\'D1\'82\'D0\'BA\'D0\'B8 \'D0\'BA\'D0\'B0\'D0\'B6\'D0\'B4\'D0\'BE\'D0\'B3\'D0\'BE \'D1\'8D\'D0\'BB\'D0\'B5\'D0\'BC\'D0\'B5\'D0\'BD\'D1\'82\'D0\'B0}\par
+00134             {\cf19 if} (!first) \{\par
+00135                 std::cout << {\cf22 "."};\par
+00136             \}\par
+00137             {\cf19 else} \{\par
+00138                 first = {\cf17 false};\par
+00139             \}\par
+00140             std::cout << args; {\cf20 // \'D0\'9F\'D0\'B5\'D1\'87\'D0\'B0\'D1\'82\'D0\'B0\'D0\'B5\'D0\'BC \'D1\'82\'D0\'B5\'D0\'BA\'D1\'83\'D1\'89\'D0\'B8\'D0\'B9 \'D0\'B0\'D1\'80\'D0\'B3\'D1\'83\'D0\'BC\'D0\'B5\'D0\'BD\'D1\'82}\par
+00141             \}()), ...); {\cf20 // Fold expression \'D0\'B4\'D0\'BB\'D1\'8F \'D0\'BF\'D1\'80\'D0\'B8\'D0\'BC\'D0\'B5\'D0\'BD\'D0\'B5\'D0\'BD\'D0\'B8\'D1\'8F \'D0\'B2\'D0\'BD\'D1\'83\'D1\'82\'D1\'80\'D0\'B5\'D0\'BD\'D0\'BD\'D0\'B5\'D0\'B9 \'D0\'BB\'D1\'8F\'D0\'BC\'D0\'B1\'D0\'B4\'D1\'8B \'D0\'BA \'D0\'BA\'D0\'B0\'D0\'B6\'D0\'B4\'D0\'BE\'D0\'BC\'D1\'83 arg}\par
+00142         \}, ip);\par
+00143     std::cout << {\cf22 "\\n"};\par
+00144 \}\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}
