@@ -43,6 +43,6 @@ int main()
 // print_ip(number);  //надоже это тоже работает 
  
   
-    return 0;
+    return 0; 
 
 }
