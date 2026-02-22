@@ -12,10 +12,13 @@ var NAVTREEINDEX0 =
 "classes.html":[0,1],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
 "files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_type.html":[0,2,1],
 "globals.html":[1,1,0],
 "globals_func.html":[1,1,1],
 "index.html":[],
 "pages.html":[],
 "structEnableIf.html":[0,0,0],
-"structEnableIf_3_01true_00_01Type_01_4.html":[0,0,1]
+"structEnableIf_3_01true_00_01Type_01_4.html":[0,0,1],
+"structEnableIf_3_01true_00_01Type_01_4.html#a08a4f34283ad974d1fe6f77a5c68b04f":[0,0,1,0]
 };
